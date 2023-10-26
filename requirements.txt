@@ -1,0 +1,7 @@
+colorama
+requests
+bs4
+concurrent.futures
+urllib.parse
+whois
+wafw00f
