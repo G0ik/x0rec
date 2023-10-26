@@ -20,6 +20,7 @@ It combines a couple of tools together to make Web application Penetration testi
 ## Download Steps
 
 1) First download the libraries necessary for the tool.
+   
 ```pip install -r requirements.txt```
 
-2) Run the tool!
+3) Run the tool!
