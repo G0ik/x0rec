@@ -16,3 +16,10 @@ It combines a couple of tools together to make Web application Penetration testi
 4) Assetfinder
 5) whois
 6) wafw00f
+
+## Download Steps
+
+1) First download the libraries necessary for the tool.
+```pip install -r requirements.txt```
+
+2) Run the tool!
