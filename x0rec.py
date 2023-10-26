@@ -24,15 +24,16 @@ def domainInput():
     global domain, domainProtocol
     domain = input(Fore.BLUE + Style.DIM + "Enter the domain without protocol: ")
     domainProtocol = int(input("Is it HTTP or HTTPS [1/2]: "))
+    global domains
     if domainProtocol == 1:
-        domain = "http://" + domain
+        domains = "http://" + domain
     else:
-        domain = "https://" + domain
+        domains = "https://" + domain
 
-    def validateDomain(domain):
+    def validateDomain(domains):
         try:
             global response
-            response = requests.get(domain)
+            response = requests.get(domains)
             if response.ok:
                 return True
         except:
@@ -40,11 +41,11 @@ def domainInput():
             domainInput()
             pass
 
-    if validateDomain(domain):
+    if validateDomain(domains):
         return True
 
 domainInput()
-print(Fore.GREEN + Style.DIM + domain + Fore.WHITE + Style.DIM)
+print(Fore.GREEN + Style.DIM + domains + Fore.WHITE + Style.DIM)
 
 unique_urls = set()
 
@@ -76,7 +77,7 @@ def crawl_website(url):
             print(f"An error occurred: {e}")
 
 with ThreadPoolExecutor(max_workers=5) as executor:
-    executor.map(crawl_website, [domain])
+    executor.map(crawl_website, [domains])
 
 print(Fore.BLUE + Style.DIM)
 
