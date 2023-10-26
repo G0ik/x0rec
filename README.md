@@ -1,2 +1,2 @@
-# x0rec
+# X0Rec
 Recon for Bug Bounty!
